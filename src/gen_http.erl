@@ -136,7 +136,17 @@ make_signed_cookie(A, Term) ->
   {header, {set_cookie, [CookieName, "=", CookieValue, "; HttpOnly; Path=/;"]}}. % should add "; secure;"
 
 cookie_secret(A) -> 
-  "blubb".
+  List = yaws_api:arg_opaque(A),
+  case proplists:get_value("cookie_secret", List) of
+    [] ->
+      throw(no_cookie_secret);
+
+    undefined ->
+      throw(no_cookie_secret);
+
+    Value ->
+      Value
+  end.
 
 encode_cookie_value(Record, Secret) ->
   Bin = term_to_binary(Record),
@@ -159,7 +169,7 @@ safe_decode(H1, H2, Base64) when H1 == H2 ->
 safe_decode(_H1, _H2, _Base64) ->
   invalid.
 
-% using this cause its 27 bytes, instead of 40 (optimization)
+% using this cause its 27 bytes, instead of 40 (smaller cookie)
 string_mac(<<C:160/big-unsigned-integer>>) ->
   riak_core_util:integer_to_list(C, 62).
 

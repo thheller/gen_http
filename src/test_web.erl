@@ -4,11 +4,12 @@
 
 -export([start/0]).
 
-start() ->
+init_sample() ->
   mnesia:start(),
   mnesia_auth:init_db(),
-  mnesia_auth:create("test", "test").
+  mnesia_auth:create("test", "testtest").
 
+% enter "the framework"
 out(A) -> gen_http:enter(?MODULE, A).
 
 % hijack all requests to /auth/* and let the test_auth mod handle them.
