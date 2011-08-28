@@ -65,6 +65,24 @@ them, since the User shouldn't be able to change them. They can still look at
 them though, so dont put secrets in there. 
 
 
+## Initializing the Sample
+
+I have never used mnesia before, so this might all be completely wrong.
+
+I start yaws with
+
+<pre>
+    yaws -i --mnesia-dir var/mnesia
+     % then init the sample
+    
+    1> test_web:init_sample().
+</pre>
+
+
+There is a test running at: [http://zilence.net:8000](http://zilence.net:8000), not
+sure how up-to-date I'll keep that. There is login/logout and register working. A Dummy
+Test Account: test/testtest is created by default.
+
 ## Credits
 
 I borrowed some code, since I didn't wanna write all that stuff myself. :P
@@ -82,4 +100,7 @@ So thanks goes to:
 
 * erlang-bcrypt
 [http://github.com/smarkets/erlang-bcrypt](http://github.com/smarkets/erlang-bcrypt)
+
+* twitter css "bootstrap"
+[http://twitter.github.com/bootstrap/](http://twitter.github.com/bootstrap/)
 
