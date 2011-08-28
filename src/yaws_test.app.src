@@ -1,0 +1,12 @@
+{application, yaws_test,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { yaws_test_app, []}},
+  {env, []}
+ ]}.

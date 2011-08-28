@@ -1,0 +1,10 @@
+<html>
+  <body>
+    This is from YAWS.
+
+    <erl>
+      out(A) ->
+        {html, "yo"}.
+    </erl>
+  </body>
+</html>

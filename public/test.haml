@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title Page Test
+    %link(rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.0.min.css")
+
+  %body
+    .container
+      %section.login
+        %form(action="/auth/login" method="POST")
+          %fieldset
+            %legend Login Form
+
+            .clearfix
+              %label Login
+              .input
+                %input.xlarge(type="text" name="login")
+
+            .clearfix
+              %label Password
+              .input
+                %input.xlarge(type="password" name="password")
+
+            .actions
+              %button.btn.primary(type="submit") Login
+
