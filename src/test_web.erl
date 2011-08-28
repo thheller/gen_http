@@ -2,7 +2,7 @@
 
 -export([out/1, process/4]).
 
--export([start/0]).
+-export([init_sample/0]).
 
 init_sample() ->
   mnesia:start(),

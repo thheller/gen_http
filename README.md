@@ -15,6 +15,9 @@ Requirements:
 * rebar (https://github.com/basho/rebar) 
 * git
 
+If you got all that, run this:
+
+<pre>
     $ git clone git://github.com/thheller/gen_http.git
     $ cd gen_http
     $ rebar get-deps
@@ -22,12 +25,13 @@ Requirements:
 
     % optional but cant hurt
     $ rebar eunit
+</pre>
 
 If all those worked, you need to setup yaws and configure a "Server".
 
 # Yaws Server Config
 
-We need a yaws <server> entry and some additional stuff, all pretty basic.
+We need a yaws server entry and some additional stuff, all pretty basic.
 I have no experience with yaws so there might be smoother ways to set this up.
 
 ## Example:
